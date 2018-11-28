@@ -1,0 +1,2 @@
+# scripts
+Scripts til VigåLAN
