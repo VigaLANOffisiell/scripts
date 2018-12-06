@@ -1,0 +1,16 @@
+#!/bin/bash
+
+DEF=$(tput sgr0)
+GREEN=$(tput setaf 2)
+network="192.168.0."
+
+subping()
+{
+  ping -c 1 $1 > /dev/null
+  [ $? -eq 0 ] && echo "$host  ${GREEN}ONLINE${DEF}"
+}
+
+for host in 192.168.0.{1..255}
+do
+subping $host & disown
+done
